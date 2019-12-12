@@ -1,0 +1,80 @@
+body{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    overflow: hidden;
+}
+.clock{
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 2px solid red;
+    position: relative;
+}
+.clock::after{
+    content: '';
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+}
+:root{
+    --deg: 0;
+}
+.clock .num{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--deg));
+    font-size: 1.5rem;
+}
+
+.clock .hand{
+    --rotat: 0;
+    position: absolute;
+    bottom: 50%;
+    background-color: red;
+    transform-origin: bottom;
+    transform: translateX(50%) rotate(calc(var(--rotat) * 1deg));
+    z-index: 10;
+}
+.clock .hand.sec{
+    width: 3px;
+    left: 49.5%;
+    height: 45%;
+    background-color: red;
+}
+.clock .hand.min{
+    width: 5px;
+    left: 48.5%;
+    height: 40%;
+    background-color: red;
+}
+.clock .hand.hr{
+    width: 7px;
+    left: 48%;
+    height: 35%;
+    background-color: red;
+}
+
+.clock .num1{  --deg : 30deg; }
+.clock .num2{  --deg : 60deg; }
+.clock .num3{  --deg : 90deg; }
+.clock .num4{  --deg : 120deg; }
+.clock .num5{  --deg : 150deg; }
+.clock .num6{  --deg : 180deg; }
+.clock .num7{  --deg : 210deg; }
+.clock .num8{  --deg : 240deg; }
+.clock .num9{  --deg : 270deg; }
+.clock .num10{  --deg : 300deg; }
+.clock .num11{  --deg : 330deg; }
+
+
